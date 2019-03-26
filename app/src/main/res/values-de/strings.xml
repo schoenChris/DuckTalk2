@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DuckTalk</string>
+    <string name="username">Benutzername</string>
+    <string name="username_hint">Geben Sie Ihren Nutzernamen ein</string>
+    <string name="login">Anmelden</string>
+    <string name="notifications_setting">Benachrichtigungen senden</string>
+</resources>
