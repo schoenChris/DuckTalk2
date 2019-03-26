@@ -5,4 +5,7 @@
     <string name="username_hint">Geben Sie Ihren Nutzernamen ein</string>
     <string name="login">Anmelden</string>
     <string name="notifications_setting">Benachrichtigungen senden</string>
+    <string name="chat">Chat</string>
+    <string name="send">Senden</string>
+    <string name="password">Passwort</string>
 </resources>

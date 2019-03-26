@@ -55,4 +55,7 @@
     <!-- Example settings for Notifications -->
 
     <string name="notifications_setting">Send notifications</string>
+    <string name="chat">Chat</string>
+    <string name="send">Send</string>
+    <string name="password">Password</string>
 </resources>
