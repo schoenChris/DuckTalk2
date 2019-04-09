@@ -1,4 +1,4 @@
-package com.constantin.ducktalk;
+package com.infoag.ducktalk;
 
 import org.junit.Test;
 

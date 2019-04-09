@@ -1,4 +1,4 @@
-package com.constantin.ducktalk;
+package com.infoag.ducktalk;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

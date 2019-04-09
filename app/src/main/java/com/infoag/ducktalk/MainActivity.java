@@ -1,4 +1,4 @@
-package com.constantin.ducktalk;
+package com.infoag.ducktalk;
 
 import android.content.Intent;
 import android.os.Bundle;
