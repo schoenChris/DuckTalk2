@@ -1,7 +1,7 @@
-## Description
+# Description
 #### A simple messaging service.
 
-
+# API
 ## Models
 ### Message model:
     id: [PK] integer
