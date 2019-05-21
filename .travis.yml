@@ -1,8 +1,6 @@
 language: java
 jdk: oraclejdk8
 
-install: gradle wrapper --gradle-version 5.0
-
 addons:
   sonarcloud:
     organization: "due-info-ag-app"
