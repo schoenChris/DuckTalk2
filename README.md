@@ -1,4 +1,4 @@
-https://travis-ci.org/DUE-Info-AG-APP/DuckTalk.svg?branch=master
+[![Build Status](https://travis-ci.org/DUE-Info-AG-APP/DuckTalk.svg?branch=master)](https://travis-ci.org/DUE-Info-AG-APP/DuckTalk)
 # Description
 #### A simple messaging service.
 
