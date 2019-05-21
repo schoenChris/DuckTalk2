@@ -1,0 +1,27 @@
+language: java
+jdk: oraclejdk8
+
+install: gradle wrapper --gradle-version 5.0
+
+addons:
+  sonarcloud:
+    organization: "due-info-ag-app"
+    token:
+      secure: ${SONAR_TOKEN}
+
+script:
+- gradle assemble
+- gradle check
+- sonar-scanner
+
+before_cache:
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+  - $HOME/.gradle/caches/
+  - $HOME/.gradle/wrapper/
+
+notifications:
+email: false
