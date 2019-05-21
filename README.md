@@ -23,7 +23,9 @@ contacts: character varying[] (255)
 ## Possible Requests
 
 #### Get list of all users on the server
-```GET /users```
+```
+GET /users
+```
 
 #### Create new user
 ```
