@@ -1,4 +1,4 @@
-https://travis-ci.org/DUE-Info-AG-APP/DuckTalk.svg?branch=master
+[![Build Status](https://travis-ci.org/DUE-Info-AG-APP/DuckTalk.svg?branch=master)](https://travis-ci.org/DUE-Info-AG-APP/DuckTalk)
 # Description
 #### A simple messaging service.
 
@@ -23,7 +23,9 @@ contacts: character varying[] (255)
 ## Possible Requests
 
 #### Get list of all users on the server
-```GET /users```
+```
+GET /users
+```
 
 #### Create new user
 ```
