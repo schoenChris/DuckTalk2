@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/DUE-Info-AG-APP/DuckTalk.svg?branch=master)](https://travis-ci.org/DUE-Info-AG-APP/DuckTalk)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=DuckTalk&metric=alert_status)](https://sonarcloud.io/dashboard?id=DuckTalk)
 # Description
 #### A simple messaging service.
 
