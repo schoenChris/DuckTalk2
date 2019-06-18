@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -80,9 +81,11 @@ func start(conf Config) {
 	r.HandleFunc("/messages", getMessages).Methods("GET").
 		Queries("sender", "", "recipient", "")
 
+	fmt.Println("Server running on port " + conf.Port)
+
 	if conf.ActivateLog {
 		loggedRouter := handlers.LoggingHandler(os.Stdout, r)
-		http.ListenAndServe(":"+conf.Port, loggedRouter)
+		log.Fatal(http.ListenAndServe(":"+conf.Port, loggedRouter))
 	} else {
 		log.Fatal(http.ListenAndServe(":"+conf.Port, r))
 	}
@@ -305,4 +308,6 @@ func postContact(w http.ResponseWriter, r *http.Request) {
 	}
 
 	db.Model(&user).Where("username = ?", username).Update("contacts", append(user.Contacts, newContact.Username))
+
+	w.WriteHeader(http.StatusCreated)
 }
