@@ -9,18 +9,18 @@ import android.widget.EditText;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText usernameField;
-    private EditText passwordField;
-    private EditText rePasswordField;
+    private EditText usernameEdit;
+    private EditText passwordEdit;
+    private EditText rePasswordEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        usernameField = findViewById(R.id.usernameField);
-        passwordField = findViewById(R.id.passwordField);
-        rePasswordField = findViewById(R.id.rePasswordField);
+        usernameEdit = findViewById(R.id.usernameField);
+        passwordEdit = findViewById(R.id.passwordField);
+        rePasswordEdit = findViewById(R.id.rePasswordField);
 
         Button registerButton = findViewById(R.id.registerButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
@@ -32,13 +32,24 @@ public class RegisterActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String usernameText = intent.getStringExtra("username_message");
-        usernameField.setText(usernameText);
+        usernameEdit.setText(usernameText);
+
+        passwordEdit.requestFocus();
     }
 
     public void attemptRegister() {
 
-        // Missing
+        // get input from user
+        String usernameText = usernameEdit.getText().toString();
+        String passwordText = passwordEdit.getText().toString();
+        String rePasswordText = rePasswordEdit.getText().toString();
 
+        // compare passwords, continue when equal
+        if (passwordText.equals(rePasswordText)) {
+
+            // continue
+
+        }
 
     }
 

@@ -1,6 +1,7 @@
 package com.infoag.ducktalk;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,7 +43,24 @@ public class LogInActivity extends AppCompatActivity {
 
     public void attemptLogin() {
 
-        // Missing
+        // get username and password from user input
+        String usernameText = usernameEdit.getText().toString();
+        String passwordText = passwordEdit.getText().toString();
+
+        // create login task
+        // new ServerTask(USER_VALIDATION).execute(usernameText, passwordText);
+
+
+        //if (success) {
+
+            // save login data in Shared Preferences
+            SharedPreferences sp = getSharedPreferences("logIn", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putString("username", usernameText);
+            editor.putString("password", passwordText);
+            editor.apply();
+
+        //}
 
 
     }
