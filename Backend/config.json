@@ -1,0 +1,7 @@
+{
+    "hostname": "localhost",
+    "port": "11000",
+    "db_dialect": "postgres",
+    "db_args": "host=127.0.0.1 port=5432 user=gorm dbname=ducktalk password=0123456789 sslmode=disable",
+    "activate_log": true
+}
