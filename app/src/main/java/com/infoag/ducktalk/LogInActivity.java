@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class LogInActivity extends AppCompatActivity {
 
     private EditText usernameEdit;
     private EditText passwordEdit;
+    private TextView errorTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,8 @@ public class LogInActivity extends AppCompatActivity {
 
         usernameEdit = findViewById(R.id.usernameField);
         passwordEdit = findViewById(R.id.passwordField);
+        errorTextView = findViewById(R.id.errorTextView);
+        errorTextView.setVisibility(View.INVISIBLE);
 
         Button logInButton = findViewById(R.id.logInButton);
         logInButton.setOnClickListener(new View.OnClickListener() {
@@ -44,25 +48,45 @@ public class LogInActivity extends AppCompatActivity {
     public void attemptLogin() {
 
         // get username and password from user input
-        String usernameText = usernameEdit.getText().toString();
-        String passwordText = passwordEdit.getText().toString();
+        String username = usernameEdit.getText().toString();
+        String password = passwordEdit.getText().toString();
 
-        // create login task
-        // new ServerTask(USER_VALIDATION).execute(usernameText, passwordText);
+        if (username.isEmpty()) {
+            setErrorText("Bitte Benutzernamen eingeben!");
+
+        } else if (password.isEmpty()) {
+            setErrorText("Bitte Passwort eingeben!");
+
+        } else {
+
+            // create login task
+            // new ServerTask(USER_VALIDATION).execute(usernameText, passwordText);
 
 
-        //if (success) {
+            //if (success) {
 
             // save login data in Shared Preferences
             SharedPreferences sp = getSharedPreferences("logIn", MODE_PRIVATE);
             SharedPreferences.Editor editor = sp.edit();
-            editor.putString("username", usernameText);
-            editor.putString("password", passwordText);
+            editor.putString("username", username);
+            editor.putString("password", password);
             editor.apply();
 
-        //}
+            Intent intent = new Intent(this, ContactViewActivity.class);
+            startActivity(intent);
+
+            //}
+
+        }
 
 
+    }
+
+    private void setErrorText(String errorText) {
+        errorTextView.setText(errorText);
+        if (errorTextView.getVisibility() != View.VISIBLE) {
+            errorTextView.setVisibility(View.VISIBLE);
+        }
     }
 
 }
